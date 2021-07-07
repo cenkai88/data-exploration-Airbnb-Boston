@@ -14,7 +14,11 @@ As we know, economy is all about supply and demand, and the market volumn is cha
 - images: images generated in the analysis
 - steps: functions involved in the data analysis flow
 - utils: help functions that are leveraged by the main analysis steps
-- main.py: the enterence script
+- main.py: the enterence script, you can run 
+  ```
+  python main.py
+  ```
+  to check the result
 
 -----------
 
@@ -34,10 +38,10 @@ Packages used are:
 
 ### Results:
 - Price has little direct correlation with availability in this dataset.
-![exploration](https://github.com/cenkai88/data-exploration-Airbnb-Boston/blob/main/images/explore-log.png?raw=true)
+![exploration](https://github.com/cenkai88/data-exploration-Airbnb-Boston/blob/main/images/explore-log.jpg?raw=true)
 
 - We got a model predicting Airbnb availability with score of 0.42 using random forest regression.
-![model](https://github.com/cenkai88/data-exploration-Airbnb-Boston/blob/main/images/model.png?raw=true)
+![model](https://github.com/cenkai88/data-exploration-Airbnb-Boston/blob/main/images/model.jpg?raw=true)
 
 - Using hypothesis test method, some factors are significantly different between highly available groups and less available, such as text length of house rules and the cancellation policy.
 
