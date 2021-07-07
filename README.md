@@ -3,8 +3,8 @@ This project is a tiny Python script that analyze the availability of Airbnb dat
 
 ### Motivation:
 As we know, economy is all about supply and demand, and the market volumn is changed by price. Since most researches on Airbnb dataset are attampts to predict prices of house, this project aims to explore:
-- if there is any relationship between Airbnb house price and availability
-- if it possible to have a model to predict the availability using the information in Airbnb dataset
+- is there any relationship between Airbnb house price and availability
+- is it possible to have a model to predict the availability using the information in Airbnb dataset
 - what are the biggest differences between vacancy houses and hot ones
 
 -----------
