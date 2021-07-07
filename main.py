@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 
 from steps.explore import format_calendar_data
 from steps.clean import clean_listings_data
-from steps.radom_forest import optimize_param
+from steps.random_forest import optimize_param
 from steps.hypo_test import fisher_test, mannwhitneyu_test
 
 %matplotlib inline

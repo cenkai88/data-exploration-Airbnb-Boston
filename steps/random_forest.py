@@ -24,5 +24,6 @@ def optimize_param(X_train, y_train):
       results_rf.append(score)
       print("")
 
-  pd.Series(results_rf,n_estimator_options).plot()
+  fig = pd.Series(results_rf,n_estimator_options).plot().get_figure()
+  fig.savefig('images/model-optimize.jpg')
 
