@@ -22,9 +22,11 @@ price_available_rate = format_calendar_data(calendar)
 
 # %%
 plt.scatter(price_available_rate['price_num'], price_available_rate['available_num'])
+plt.savefig("images/explore.png")
 
 # %%
 plt.scatter(price_available_rate['price_num_log'], price_available_rate['available_num'])
+plt.savefig("images/explore-log.png")
 
 # %%
 price_available_rate[['price_num_log', 'available_num']].corr()
@@ -59,6 +61,7 @@ fig, ax = plt.subplots()
 ax.scatter(y_test, pred_y)
 ax.set_xlabel('Measured')
 ax.set_ylabel('Predicted')
+plt.savefig("images/model.png")
 plt.show()
 rf_regressor.score(X_test,y_test)
 
