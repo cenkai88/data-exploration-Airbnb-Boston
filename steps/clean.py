@@ -88,7 +88,7 @@ def clean_listings_data(listings):
 
   listings = convert_to_bool(listings, columns_to_bool)
    
-  # convert to number
+  # convert to number by stripping unnecessary stirngs including '$' and '%'
   columns_to_num = [
     ['host_since', 'DATERANGE'],
     ['last_review', 'DATERANGE'],
@@ -106,7 +106,7 @@ def clean_listings_data(listings):
   listings.drop(['availability_365'], axis=1, inplace=True)
   listings[['price']] = listings[['price']].astype('float64')
 
-  # convert to category
+  # convert to category (since some of the numeric values are not evenly distributed, we need to convert them into categories)
 
   listings['house_rules'] = listings['house_rules'].apply(
       lambda x: 'LONG' if x > 246 else ('MEDIUM' if x > 71 else 'SHORT'))
@@ -120,7 +120,11 @@ def clean_listings_data(listings):
   listings['calendar_updated'] = listings['calendar_updated'].apply(
       calendar_updated_formatter)
 
-  # fillin na
+  # fillin na:
+  # mean(review scores), 
+  # 1(rooms), 
+  # 0(reviews per month when there's no review), 
+  # mode(host response time)
 
   columns_to_fill_na = [
     ['review_scores_rating', listings['review_scores_rating'].mean()],
@@ -140,12 +144,17 @@ def clean_listings_data(listings):
   listings = fill_col_na(listings, columns_to_fill_na)
 
   # %%
-  # clean zipcode and create a zipcode_median_price
+  # clean zipcode and create a zipcode_median_price:
+  # Used zipcode to represent the location of property, 
+  # and calculated the median price (since there are outliners for price) for each zipcode(area) 
+  # and try to normalize the price of each property to get rid of the location factor.
   listings = process_zipcode(listings)
 
   # %%
+  # convert amenities column since its original format is not flat
   listings = process_amenities(listings)
 
   # %%
+  # wrap up and generate dummy columns
   listings = generate_dummies(listings)
   return listings

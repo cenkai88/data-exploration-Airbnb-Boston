@@ -24,6 +24,6 @@ def optimize_param(X_train, y_train):
       results_rf.append(score)
       print("")
 
-  fig = pd.Series(results_rf,n_estimator_options).plot().get_figure()
+  fig = pd.Series(results_rf,n_estimator_options).plot(title='num of trees tunning', xlabel='number of trees', ylabel='score').get_figure()
   fig.savefig('images/model-optimize.jpg')
 
