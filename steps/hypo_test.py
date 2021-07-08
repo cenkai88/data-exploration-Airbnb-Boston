@@ -3,7 +3,17 @@ import pandas as pd
 from scipy.stats import fisher_exact
 from scipy.stats import mannwhitneyu
 
-def fisher_test(df_high, df_low, columns, alternative):
+def fisher_test(df_high, df_low, columns, alternative='GREATER'):
+  '''
+    INPUT
+    df_high - df of high availability properties
+    df_low - df of low availability properties
+    columns - columns to make hypothesis test against between two groups
+    alternative - enum: ['GREATER', 'LESS'] the test parameter
+    
+    OUTPUT
+    p value of the test
+    '''
   dummy_pval = pd.Series()
   for col in columns:
       high_1 = df_high[col].sum()
@@ -16,6 +26,16 @@ def fisher_test(df_high, df_low, columns, alternative):
   return dummy_pval
 
 def mannwhitneyu_test(df_high, df_low, columns, alternative):
+  '''
+    INPUT
+    df_high - df of high availability properties
+    df_low - df of low availability properties
+    columns - columns to make hypothesis test against between two groups
+    alternative - enum: ['GREATER', 'LESS'] the test parameter
+    
+    OUTPUT
+    p value of the test
+    '''
   numeric_pval = pd.Series()
   for col in columns:
       high = df_high[col]
