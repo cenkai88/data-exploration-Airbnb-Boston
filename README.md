@@ -98,7 +98,7 @@ Packages used are:
     |review_scores_accuracy       |1.723554e-07|
 
 
-For more info, please refer to the [Medium article](https://medium.com/@cenkai29/exploratory-data-analysis-on-airbnb-availability-in-boston-500fb4b401c5).
+For more detailed results, please refer to the [Medium article](https://medium.com/@cenkai29/exploratory-data-analysis-on-airbnb-availability-in-boston-500fb4b401c5).
 
 -----------
 
