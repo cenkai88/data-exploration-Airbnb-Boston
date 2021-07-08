@@ -14,6 +14,7 @@ As we know, economy is all about supply and demand, and the market volumn is cha
 - images: images generated in the analysis
 - steps: functions involved in the data analysis flow
 - utils: help functions that are leveraged by the main analysis steps
+- explore.ipynb: the jupyter notebook for this exploration
 - main.py: the enterence script, you can run 
   ```
   python main.py
